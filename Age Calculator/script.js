@@ -4,7 +4,8 @@ function ageCalculate(){
     var millisecondsDOB = Date.parse(inputDate);
     var millisecondsNow = Date.now();
     var ageInMilliseconds = millisecondsNow-millisecondsDOB;
-
+    
+    //for conversion 
     var milliseconds = ageInMilliseconds;
     var second = 1000;
     var minute = second*60;
@@ -13,13 +14,14 @@ function ageCalculate(){
     var month = day*30; 
     var year = day*365;
 
-    //let the age conversion begin
+    //let the age conversion for round-up(age);
     var years = Math.round(milliseconds/year);
     var months = Math.round(milliseconds/month);
     var days = Math.round(milliseconds/day);
     var hours = Math.round(milliseconds/hour);
     var seconds = Math.round(milliseconds/second);
 
+    // //let the age conversion for fixed(age);
     // var years = milliseconds/year;
     // var months = milliseconds/month;
     // var days = milliseconds/day;
@@ -29,11 +31,11 @@ function ageCalculate(){
     displayResult(years,months,days,hours,seconds);
 }
 
-function displayResult(bYear,bMonth,bDays,bHours,BSeconds){
-    document.getElementById("years").textContent = bYear;
-    document.getElementById("months").textContent = bMonth;
-    document.getElementById("days").textContent = bDays;
-    document.getElementById("hours").textContent = bHours;
-    document.getElementById("seconds").textContent = BSeconds;
+function displayResult(years,months,days,hours,seconds){
+    document.getElementById("years").textContent = years;
+    document.getElementById("months").textContent = months;
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("seconds").textContent = seconds;
 
 }
